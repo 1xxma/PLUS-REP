@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLUS REP — Наша команда</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="header-nav">
+            <a href="subjects.html">РЕПЕТИТОРЫ</a>
+            <a href="reviews.html">ОТЗЫВЫ</a>
+            <a href="about.html" class="active">О НАС</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="login.html" class="btn btn-outline">ВОЙТИ</a>
+            <a href="schedule.html" class="btn btn-accent">ЗАПИСЬ</a>
+        </div>
+    </header>
+
+    <main class="about-container">
+        <h1 class="about-title">Наша команда</h1>
+
+        <p class="about-text">
+            Мы — команда демонов-репетиторов. Работаем <strong>666 лет</strong>, но ни у кого из нас <strong>нет образования</strong>. Зато есть огромное желание <strong>заработать</strong> и полное отсутствие совести. Мы не учим — мы <strong>мучаем</strong>. Не помогаем — <strong>мешаем</strong>. И да, нам <strong>не доверяют</strong> даже родители.
+        </p>
+
+        <div class="about-photo">
+            <img src="images/demons.jpg" alt="Команда PLUS REP — главный демон и 5 демониц">
+        </div>
+
+        <h2 class="about-subtitle">Наши репетиторы</h2>
+
+        <ul class="about-list">
+            <li><strong>Люцифер Петрович</strong> — основатель, бывший бухгалтер, ныне властелин 9-го круга (по совместительству)</li>
+            <li><strong>Асмодея Кузнецова</strong> — Математика. Считает грехи быстрее, чем ты — производные</li>
+            <li><strong>Лилит Смирнова</strong> — Английский. Объясняет грамматику на языке проклятий</li>
+            <li><strong>Морриган Иванова</strong> — Русский. Запятые ставит там, где хочет</li>
+            <li><strong>Хель Петрова</strong> — История. Помнит все твои грехи с 1-го класса</li>
+            <li><strong>Бафомет Сидорова</strong> — Биология. Разбирает анатомию по чакрам</li>
+        </ul>
+
+        <h2 class="about-subtitle">Как нас найти</h2>
+
+        <ul class="about-contacts">
+            <li>🔥 <strong>Адрес:</strong> г. Москва, ул. Чертанова, д. 6, офис 999</li>
+            <li>📧 <strong>Почта:</strong> ad-9-krug@plusrep.ru</li>
+            <li>📞 <strong>Телефон:</strong> +7 (666) 666-66-66</li>
+            <li>🕐 <strong>Режим работы:</strong> с 13:00 до 13:13 по чётным пятницам</li>
+        </ul>
+    </main>
+
+    <script src="auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const user = getCurrentUser();
+            if (!user) return;
+
+            document.querySelectorAll('header a').forEach(link => {
+                const text = link.textContent.trim();
+                if (text === 'ВОЙТИ' || link.getAttribute('href') === 'login.html') {
+                    link.textContent = user.name;
+                    link.setAttribute('href', '#');
+                    link.classList.add('user-name-link');
+                    link.title = 'Нажмите, чтобы выйти';
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        if (confirm('Выйти из аккаунта?')) logout();
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
