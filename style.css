@@ -191,7 +191,24 @@ a {
 }
 
 /* =========================================
-   6. ШАПКА
+   6. КНОПКА-ДРОЖАЛКА (Записаться)
+   ========================================= */
+.btn-shake:hover {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%   { transform: translateX(0); }
+    15%  { transform: translateX(-8px) rotate(-2deg); }
+    30%  { transform: translateX(8px) rotate(2deg); }
+    45%  { transform: translateX(-6px) rotate(-1deg); }
+    60%  { transform: translateX(6px) rotate(1deg); }
+    75%  { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+/* =========================================
+   7. ШАПКА
    ========================================= */
 header {
     display: flex;
@@ -256,7 +273,7 @@ header {
 }
 
 /* =========================================
-   7. ГЛАВНАЯ (HERO)
+   8. ГЛАВНАЯ (HERO)
    ========================================= */
 .hero {
     flex-grow: 1;
@@ -307,7 +324,7 @@ header {
 }
 
 /* =========================================
-   8. АДАПТИВНОСТЬ
+   9. АДАПТИВНОСТЬ
    ========================================= */
 @media (max-width: 992px) {
     header {
