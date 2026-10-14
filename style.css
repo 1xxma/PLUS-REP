@@ -1,8 +1,6 @@
 /* =========================================
    1. ПОДКЛЮЧЕНИЕ ШРИФТОВ
    ========================================= */
-
-/* Benzin Bold — для заголовков */
 @font-face {
     font-family: 'Benzin';
     src: url('fonts/benzin-bold.woff2') format('woff2'),
@@ -12,7 +10,6 @@
     font-display: swap;
 }
 
-/* Buyan Regular — для основного текста */
 @font-face {
     font-family: 'Buyan';
     src: url('fonts/BuyanRegular.ttf') format('truetype');
@@ -21,7 +18,6 @@
     font-display: swap;
 }
 
-/* Buyan Bold */
 @font-face {
     font-family: 'Buyan';
     src: url('fonts/BuyanBold.ttf') format('truetype');
@@ -30,7 +26,6 @@
     font-display: swap;
 }
 
-/* Buyan Thin */
 @font-face {
     font-family: 'Buyan';
     src: url('fonts/BuyanThin.ttf') format('truetype');
@@ -91,7 +86,7 @@ body::before {
     pointer-events: none;
 }
 
-/* Затемнение поверх паттерна, чтобы текст читался */
+/* Затемнение поверх паттерна */
 body::after {
     content: '';
     position: fixed;
@@ -147,8 +142,8 @@ a {
 .btn-accent:hover {
     background: var(--accent-hover);
     border-color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 28px rgba(255, 209, 102, 0.45);
 }
 
 .btn-lg {
@@ -157,7 +152,46 @@ a {
 }
 
 /* =========================================
-   5. ШАПКА
+   5. КНОПКА-ПЕРЕВЁРТЫШ
+   (Найти репетитора → Отдать душу)
+   ========================================= */
+.btn-book {
+    position: relative;
+    overflow: hidden;
+    min-width: 240px;
+}
+
+.btn-book .btn-text-normal,
+.btn-book .btn-text-hover {
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-book .btn-text-hover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 200%);
+    opacity: 0;
+    color: #d12e4f;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-book:hover .btn-text-normal {
+    transform: translateY(-200%);
+    opacity: 0;
+}
+
+.btn-book:hover .btn-text-hover {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+/* =========================================
+   6. ШАПКА
    ========================================= */
 header {
     display: flex;
@@ -174,7 +208,6 @@ header {
     gap: 20px;
 }
 
-/* Меню */
 .header-nav {
     display: flex;
     align-items: center;
@@ -198,7 +231,6 @@ header {
     border-bottom-color: var(--accent);
 }
 
-/* Кнопки справа */
 .header-actions {
     display: flex;
     align-items: center;
@@ -224,7 +256,7 @@ header {
 }
 
 /* =========================================
-   6. ГЛАВНАЯ (HERO)
+   7. ГЛАВНАЯ (HERO)
    ========================================= */
 .hero {
     flex-grow: 1;
@@ -242,7 +274,6 @@ header {
     z-index: 1;
 }
 
-/* Заголовок — Benzin Bold */
 .hero-title {
     font-family: 'Benzin', 'Buyan', sans-serif;
     font-size: 68px;
@@ -253,7 +284,6 @@ header {
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 
-/* Подзаголовок — Buyan Regular */
 .hero-subtitle {
     font-family: 'Buyan', sans-serif;
     font-size: 22px;
@@ -261,6 +291,11 @@ header {
     color: var(--text-muted);
     max-width: 720px;
     font-weight: 400;
+}
+
+.hero-accent {
+    color: var(--accent);
+    font-weight: 700;
 }
 
 .hero-actions {
@@ -272,7 +307,7 @@ header {
 }
 
 /* =========================================
-   7. АДАПТИВНОСТЬ
+   8. АДАПТИВНОСТЬ
    ========================================= */
 @media (max-width: 992px) {
     header {
@@ -327,6 +362,9 @@ header {
         padding: 13px 24px;
         font-size: 14px;
     }
+    .btn-book {
+        min-width: 200px;
+    }
     body::before {
         filter: blur(6px);
         opacity: 0.35;
@@ -360,11 +398,7 @@ header {
     .hero-actions .btn {
         width: 100%;
     }
-}
-/* =========================================
-   ЭФФЕКТ НАВЕДЕНИЯ НА КНОПКУ "ЗАПИСЬ"
-   ========================================= */
-.btn-accent:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 28px rgba(255, 209, 102, 0.45);
+    .btn-book {
+        min-width: 100%;
+    }
 }
