@@ -1,0 +1,336 @@
+/* =========================================
+   ШРИФТЫ
+   ========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================================
+   ПЕРЕМЕННЫЕ
+   ========================================= */
+:root {
+    --bg:           #d12e4f;
+    --bg-dark:      #a82240;
+    --card:         #c42847;
+    --text:         #f7efd9;
+    --text-muted:   #e8d9b8;
+    --accent:       #ffd166;
+    --accent-hover: #ffbe3d;
+    --border:       rgba(247, 239, 217, 0.22);
+}
+
+/* =========================================
+   БАЗА
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Размытый паттерн на фоне */
+body::before {
+    content: '';
+    position: fixed;
+    top: -40px;
+    left: -40px;
+    right: -40px;
+    bottom: -40px;
+    background-image: url('images/bg-pattern.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    opacity: 0.4;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(209, 46, 79, 0.4);
+    z-index: -1;
+    pointer-events: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+    transition: color 0.25s;
+}
+
+/* =========================================
+   КНОПКИ (общие)
+   ========================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.btn-outline {
+    background: transparent;
+    border-color: var(--text);
+    color: var(--text);
+}
+
+.btn-outline:hover {
+    background: var(--text);
+    color: var(--bg-dark);
+}
+
+.btn-accent {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--bg-dark);
+}
+
+.btn-accent:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-lg {
+    padding: 16px 34px;
+    font-size: 16px;
+}
+
+/* =========================================
+   ШАПКА
+   ========================================= */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 50px;
+    background-color: rgba(168, 34, 64, 0.55);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    gap: 20px;
+}
+
+/* Левая часть: иконка */
+.header-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+}
+
+/* Центральная часть: меню */
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.header-nav a {
+    color: var(--text);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+    transition: border-color 0.25s, color 0.25s;
+}
+
+.header-nav a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+/* Правая часть: кнопки */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* Имя залогиненного юзера */
+.user-name-link {
+    background: transparent !important;
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-name-link:hover {
+    background: var(--accent) !important;
+    color: var(--bg-dark) !important;
+}
+
+/* =========================================
+   ГЛАВНАЯ (HERO)
+   ========================================= */
+.hero {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-family: 'Unbounded', sans-serif;
+    font-size: 72px;
+    line-height: 1.05;
+    font-weight: 700;
+    letter-spacing: -2px;
+    color: var(--text);
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero-subtitle {
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--text-muted);
+    max-width: 720px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 12px;
+}
+
+/* =========================================
+   АДАПТИВНОСТЬ
+   ========================================= */
+@media (max-width: 992px) {
+    header {
+        padding: 15px 25px;
+        flex-wrap: wrap;
+    }
+    .header-nav {
+        gap: 20px;
+        font-size: 13px;
+        order: 3;
+        flex-basis: 100%;
+        justify-content: center;
+        margin-top: 8px;
+    }
+    .hero-title {
+        font-size: 52px;
+    }
+    .hero-subtitle {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 12px 20px;
+    }
+    .header-actions {
+        gap: 8px;
+    }
+    .btn {
+        padding: 8px 14px;
+        font-size: 12px;
+        letter-spacing: 0.8px;
+    }
+    .header-nav {
+        gap: 16px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+    .hero {
+        padding: 40px 20px;
+        gap: 20px;
+    }
+    .hero-title {
+        font-size: 34px;
+        letter-spacing: -1px;
+    }
+    .hero-subtitle {
+        font-size: 15px;
+    }
+    .btn-lg {
+        padding: 13px 24px;
+        font-size: 14px;
+    }
+    body::before {
+        filter: blur(6px);
+        opacity: 0.35;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 15px;
+        gap: 10px;
+    }
+    .header-logo svg {
+        width: 32px;
+        height: 32px;
+    }
+    .btn {
+        padding: 7px 10px;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+    }
+    .header-nav {
+        gap: 12px;
+        font-size: 11px;
+    }
+    .hero-title {
+        font-size: 26px;
+    }
+    .hero-subtitle {
+        font-size: 14px;
+    }
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    .hero-actions .btn {
+        width: 100%;
+    }
+}
