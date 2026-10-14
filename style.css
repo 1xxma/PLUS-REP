@@ -68,7 +68,6 @@ body {
     position: relative;
 }
 
-/* Размытый паттерн на фоне */
 body::before {
     content: '';
     position: fixed;
@@ -86,7 +85,6 @@ body::before {
     pointer-events: none;
 }
 
-/* Затемнение поверх паттерна */
 body::after {
     content: '';
     position: fixed;
@@ -152,8 +150,7 @@ a {
 }
 
 /* =========================================
-   5. КНОПКА-ПЕРЕВЁРТЫШ
-   (Найти репетитора → Отдать душу)
+   5. КНОПКА-ПЕРЕВЁРТЫШ (Найти репетитора → Отдать душу)
    ========================================= */
 .btn-book {
     position: relative;
@@ -255,7 +252,6 @@ header {
     flex-shrink: 0;
 }
 
-/* Имя залогиненного юзера */
 .user-name-link {
     background: transparent !important;
     border-color: var(--accent) !important;
