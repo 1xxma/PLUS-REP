@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLUS REP — Репетиторы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="header-nav">
+            <a href="subjects.html" class="active">РЕПЕТИТОРЫ</a>
+            <a href="reviews.html">ОТЗЫВЫ</a>
+            <a href="about.html">О НАС</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="login.html" class="btn btn-outline">ВОЙТИ</a>
+            <a href="schedule.html" class="btn btn-accent">ЗАПИСЬ</a>
+        </div>
+    </header>
+
+    <main class="subjects-page">
+        <h1 class="page-title">Наши репетиторы</h1>
+        <p class="page-subtitle">Выбирай своего демона — и вперёд к знаниям (или к погибели)</p>
+
+        <div class="tutors-grid">
+
+            <a href="tutor.html" class="tutor-card-link">
+                <div class="tutor-card-photo">
+                    <img src="images/asmodeya.jpg" alt="Асмодея Кузнецова">
+                </div>
+                <div class="tutor-card-body">
+                    <div class="tutor-card-name">Асмодея Кузнецова</div>
+                    <div class="tutor-card-subject">Математика</div>
+                    <div class="tutor-card-price">от 600 ₽</div>
+                </div>
+            </a>
+
+            <a href="tutor2.html" class="tutor-card-link">
+                <div class="tutor-card-photo">
+                    <img src="images/lilit.jpg" alt="Лилит Смирнова">
+                </div>
+                <div class="tutor-card-body">
+                    <div class="tutor-card-name">Лилит Смирнова</div>
+                    <div class="tutor-card-subject">Английский язык</div>
+                    <div class="tutor-card-price">от 800 ₽</div>
+                </div>
+            </a>
+
+            <a href="tutor3.html" class="tutor-card-link">
+                <div class="tutor-card-photo">
+                    <img src="images/morrigan.jpg" alt="Морриган Иванова">
+                </div>
+                <div class="tutor-card-body">
+                    <div class="tutor-card-name">Морриган Иванова</div>
+                    <div class="tutor-card-subject">Русский язык</div>
+                    <div class="tutor-card-price">от 600 ₽</div>
+                </div>
+            </a>
+
+            <a href="tutor5.html" class="tutor-card-link">
+                <div class="tutor-card-photo">
+                    <img src="images/hel.jpg" alt="Хель Петрова">
+                </div>
+                <div class="tutor-card-body">
+                    <div class="tutor-card-name">Хель Петрова</div>
+                    <div class="tutor-card-subject">История</div>
+                    <div class="tutor-card-price">от 900 ₽</div>
+                </div>
+            </a>
+
+            <a href="tutor6.html" class="tutor-card-link">
+                <div class="tutor-card-photo">
+                    <img src="images/bafomet.jpg" alt="Бафомет Сидорова">
+                </div>
+                <div class="tutor-card-body">
+                    <div class="tutor-card-name">Бафомет Сидорова</div>
+                    <div class="tutor-card-subject">Биология</div>
+                    <div class="tutor-card-price">от 850 ₽</div>
+                </div>
+            </a>
+
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const user = getCurrentUser();
+            if (!user) return;
+
+            document.querySelectorAll('header a').forEach(link => {
+                const text = link.textContent.trim();
+                if (text === 'ВОЙТИ' || link.getAttribute('href') === 'login.html') {
+                    link.textContent = user.name;
+                    link.setAttribute('href', '#');
+                    link.classList.add('user-name-link');
+                    link.title = 'Нажмите, чтобы выйти';
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        if (confirm('Выйти из аккаунта?')) logout();
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
