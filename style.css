@@ -721,3 +721,154 @@ header {
         min-width: 100%;
     }
 }
+/* =========================================
+   СТРАНИЦА ОТЗЫВОВ (с zalgo-текстом)
+   ========================================= */
+.reviews-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.reviews-panel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.reviews-panel h2 {
+    font-family: 'Benzin', 'Buyan', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--text);
+    margin-bottom: 45px;
+    text-align: center;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.review-card {
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 28px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    /* Для zalgo: чтобы текст не улетал за карточку */
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.review-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 15px 40px rgba(255, 209, 102, 0.2);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.review-avatar {
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Benzin', 'Buyan', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.review-author {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+    flex-grow: 1;
+}
+
+/* Zalgo: увеличенный line-height и letter-spacing, чтобы символы не налезали */
+.review-name {
+    font-family: 'Benzin', 'Buyan', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    letter-spacing: 1px;
+    line-height: 1.8;
+    word-break: break-word;
+}
+
+.review-role {
+    font-family: 'Buyan', sans-serif;
+    font-size: 14px;
+    color: var(--text-muted);
+    opacity: 0.85;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    word-break: break-word;
+}
+
+.review-stars {
+    font-size: 22px;
+    color: var(--accent);
+    letter-spacing: 4px;
+}
+
+.review-text {
+    font-family: 'Buyan', sans-serif;
+    font-size: 15px;
+    line-height: 2;                /* для zalgo */
+    letter-spacing: 1px;            /* для zalgo */
+    color: var(--text-muted);
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .reviews-panel {
+        padding: 30px 20px;
+    }
+    .reviews-panel h2 {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .review-card {
+        padding: 22px 20px;
+    }
+    .review-avatar {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    .review-name {
+        font-size: 16px;
+    }
+    .review-text {
+        font-size: 14px;
+    }
+}
