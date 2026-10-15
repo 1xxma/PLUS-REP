@@ -381,7 +381,7 @@ header {
 }
 
 /* =========================================
-   10. КАРТОЧКИ РЕПЕТИТОРОВ
+   10. КАРТОЧКИ РЕПЕТИТОРОВ (в about)
    ========================================= */
 .tutors-grid {
     display: grid;
@@ -422,7 +422,7 @@ header {
 }
 
 /* =========================================
-   11. КОНТАКТЫ + КАРТА
+   11. КОНТАКТЫ + КАРТА (about)
    ========================================= */
 .contacts-wrapper {
     display: grid;
@@ -478,7 +478,7 @@ header {
 }
 
 /* =========================================
-   12. РЕАЛЬНЫЕ ИЗВЕРГИ (карточка: текст + фото)
+   12. РЕАЛЬНЫЕ ИЗВЕРГИ (about)
    ========================================= */
 .villains-title {
     color: var(--text) !important;
@@ -514,9 +514,7 @@ header {
     box-shadow: 0 15px 40px rgba(255, 209, 102, 0.2);
 }
 
-.villain-info {
-    min-width: 0;
-}
+.villain-info { min-width: 0; }
 
 .villain-name {
     font-family: 'Benzin', 'Buyan', sans-serif;
@@ -568,312 +566,7 @@ header {
 }
 
 /* =========================================
-   13. АДАПТИВНОСТЬ
-   ========================================= */
-@media (max-width: 992px) {
-    header {
-        padding: 15px 25px;
-        flex-wrap: wrap;
-    }
-    .header-nav {
-        gap: 20px;
-        font-size: 13px;
-        order: 3;
-        flex-basis: 100%;
-        justify-content: center;
-        margin-top: 8px;
-    }
-    .hero-title,
-    .about-title {
-        font-size: 48px;
-    }
-    .hero-subtitle {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        padding: 12px 20px;
-    }
-    .header-actions {
-        gap: 8px;
-    }
-    .btn {
-        padding: 8px 14px;
-        font-size: 12px;
-        letter-spacing: 0.8px;
-    }
-    .header-nav {
-        gap: 16px;
-        font-size: 12px;
-        letter-spacing: 1px;
-    }
-    .hero {
-        padding: 40px 20px;
-        gap: 20px;
-    }
-    .hero-title,
-    .about-title {
-        font-size: 32px;
-        letter-spacing: 0;
-    }
-    .hero-subtitle {
-        font-size: 16px;
-    }
-    .btn-lg {
-        padding: 13px 24px;
-        font-size: 14px;
-    }
-    .btn-book {
-        min-width: 200px;
-    }
-    body::before {
-        filter: blur(6px);
-        opacity: 0.35;
-    }
-
-    .about-container {
-        padding: 40px 20px;
-    }
-    .about-text {
-        font-size: 16px;
-    }
-    .about-subtitle {
-        font-size: 26px;
-    }
-
-    .tutors-grid {
-        grid-template-columns: 1fr;
-    }
-    .tutor-card-name {
-        font-size: 20px;
-    }
-    .tutor-card-desc {
-        font-size: 15px;
-    }
-
-    .contacts-wrapper {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    .contacts-wrapper .about-contacts {
-        font-size: 17px;
-        padding: 20px 22px;
-    }
-    .contacts-wrapper .about-contacts li {
-        font-size: 17px;
-    }
-
-    .villains-title {
-        font-size: 28px;
-    }
-    .villain-card {
-        grid-template-columns: 1fr;
-        padding: 20px 22px;
-        gap: 18px;
-    }
-    .villain-photo {
-        width: 100%;
-        height: 220px;
-    }
-    .villain-name {
-        font-size: 20px;
-    }
-    .villain-nick {
-        font-size: 16px;
-    }
-    .villain-role,
-    .villain-desc {
-        font-size: 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 10px 15px;
-        gap: 10px;
-    }
-    .btn {
-        padding: 7px 10px;
-        font-size: 11px;
-        letter-spacing: 0.5px;
-    }
-    .header-nav {
-        gap: 12px;
-        font-size: 11px;
-    }
-    .hero-title,
-    .about-title {
-        font-size: 24px;
-    }
-    .hero-subtitle {
-        font-size: 14px;
-    }
-    .hero-actions {
-        flex-direction: column;
-        width: 100%;
-    }
-    .hero-actions .btn {
-        width: 100%;
-    }
-    .btn-book {
-        min-width: 100%;
-    }
-}
-/* =========================================
-   СТРАНИЦА ОТЗЫВОВ (с zalgo-текстом)
-   ========================================= */
-.reviews-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-}
-
-.reviews-panel {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 60px 40px;
-}
-
-.reviews-panel h2 {
-    font-family: 'Benzin', 'Buyan', sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    letter-spacing: -1px;
-    color: var(--text);
-    margin-bottom: 45px;
-    text-align: center;
-    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
-
-.reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.review-card {
-    background: rgba(0, 0, 0, 0.25);
-    border: 2px solid var(--border);
-    border-radius: 16px;
-    padding: 28px 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-    /* Для zalgo: чтобы текст не улетал за карточку */
-    overflow: hidden;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-.review-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--accent);
-    box-shadow: 0 15px 40px rgba(255, 209, 102, 0.2);
-}
-
-.review-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.review-avatar {
-    width: 55px;
-    height: 55px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: var(--accent);
-    color: var(--bg-dark);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Benzin', 'Buyan', sans-serif;
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.review-author {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    min-width: 0;
-    flex-grow: 1;
-}
-
-/* Zalgo: увеличенный line-height и letter-spacing, чтобы символы не налезали */
-.review-name {
-    font-family: 'Benzin', 'Buyan', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: 1px;
-    line-height: 1.8;
-    word-break: break-word;
-}
-
-.review-role {
-    font-family: 'Buyan', sans-serif;
-    font-size: 14px;
-    color: var(--text-muted);
-    opacity: 0.85;
-    letter-spacing: 1px;
-    line-height: 1.8;
-    word-break: break-word;
-}
-
-.review-stars {
-    font-size: 22px;
-    color: var(--accent);
-    letter-spacing: 4px;
-}
-
-.review-text {
-    font-family: 'Buyan', sans-serif;
-    font-size: 15px;
-    line-height: 2;                /* для zalgo */
-    letter-spacing: 1px;            /* для zalgo */
-    color: var(--text-muted);
-    word-break: break-word;
-    overflow-wrap: break-word;
-}
-
-/* Адаптив */
-@media (max-width: 768px) {
-    .reviews-panel {
-        padding: 30px 20px;
-    }
-    .reviews-panel h2 {
-        font-size: 28px;
-        margin-bottom: 25px;
-    }
-    .reviews-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-    .review-card {
-        padding: 22px 20px;
-    }
-    .review-avatar {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-    }
-    .review-name {
-        font-size: 16px;
-    }
-    .review-text {
-        font-size: 14px;
-    }
-}
-/* =========================================
-   СТРАНИЦА РЕПЕТИТОРОВ (SUBJECTS)
+   13. СТРАНИЦА РЕПЕТИТОРОВ (SUBJECTS) — карточки
    ========================================= */
 .subjects-page {
     flex-grow: 1;
@@ -951,7 +644,7 @@ header {
     text-align: center;
 }
 
-.tutor-card-name {
+.tutor-card-body .tutor-card-name {
     font-family: 'Benzin', 'Buyan', sans-serif;
     font-size: 22px;
     font-weight: 700;
@@ -976,205 +669,33 @@ header {
 }
 
 /* =========================================
-   СТРАНИЦА РЕПЕТИТОРА (TUTOR) — стиль Авито
+   14. КАРТОЧКА САТАНЫ (горизонтальная)
    ========================================= */
-.tutor-breadcrumb {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 40px 0;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-}
-
-.tutor-breadcrumb a {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Buyan', sans-serif;
-    font-size: 16px;
-    color: var(--text-muted);
-    transition: color 0.2s;
-}
-
-.tutor-breadcrumb a:hover {
-    color: var(--accent);
-}
-
-.tutor-page {
-    flex-grow: 1;
+.satan-card {
     display: grid;
-    grid-template-columns: 420px 1fr;
-    gap: 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 40px 80px;
-    width: 100%;
-    position: relative;
-    z-index: 1;
-    align-items: flex-start;
-}
-
-.tutor-page-photo {
+    grid-template-columns: 280px 1fr;
+    gap: 30px;
+    background: linear-gradient(135deg, rgba(168, 34, 64, 0.55), rgba(0, 0, 0, 0.35));
+    border: 3px solid var(--accent);
     border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 50px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
     overflow: hidden;
-    border: 3px solid var(--border);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
-    position: sticky;
-    top: 110px;
+    box-shadow: 0 20px 50px rgba(255, 209, 102, 0.2);
 }
 
-.tutor-page-photo img {
-    display: block;
-    width: 100%;
-    height: auto;
+.satan-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 209, 102, 0.08), transparent 70%);
+    pointer-events: none;
 }
 
-.tutor-page-info {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.tutor-page-name {
-    font-family: 'Benzin', 'Buyan', sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    letter-spacing: -1px;
-    color: var(--text);
-    line-height: 1.1;
-    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
-
-.tutor-page-price {
-    font-family: 'Benzin', 'Buyan', sans-serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.5px;
-    margin-bottom: 8px;
-}
-
-.tutor-page-desc {
-    font-family: 'Buyan', sans-serif;
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--text-muted);
-    padding: 20px 0;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-.tutor-page-subtitle {
-    font-family: 'Benzin', 'Buyan', sans-serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--text);
-    margin-top: 15px;
-    letter-spacing: -0.3px;
-}
-
-.tutor-specs {
-    width: 100%;
-    border-collapse: collapse;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-}
-
-.tutor-specs tr {
-    border-bottom: 1px solid var(--border);
-}
-
-.tutor-specs tr:last-child {
-    border-bottom: none;
-}
-
-.tutor-specs td {
-    padding: 16px 22px;
-    font-family: 'Buyan', sans-serif;
-    font-size: 16px;
-    vertical-align: top;
-}
-
-.spec-label {
-    color: var(--text-muted);
-    width: 40%;
-    font-weight: 400;
-}
-
-.spec-value {
-    color: var(--text);
-    font-weight: 700;
-}
-
-.tutor-page-btn {
-    margin-top: 15px;
-    text-align: center;
-    width: 100%;
-    max-width: 320px;
-    align-self: flex-start;
-}
-
-/* =========================================
-   АДАПТИВ
-   ========================================= */
-@media (max-width: 992px) {
-    .tutors-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .tutor-page {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    .tutor-page-photo {
-        position: static;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .subjects-page {
-        padding: 40px 20px;
-    }
-    .page-title {
-        font-size: 34px;
-    }
-    .page-subtitle {
-        font-size: 15px;
-        margin-bottom: 30px;
-    }
-    .tutors-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-    .tutor-card-name {
-        font-size: 20px;
-    }
-
-    .tutor-page {
-        padding: 25px 20px 50px;
-    }
-    .tutor-page-name {
-        font-size: 32px;
-    }
-    .tutor-page-price {
-        font-size: 24px;
-    }
-    .tutor-page-desc {
-        font-size: 15px;
-        padding: 15px 0;
-    }
-    .tutor-page-subtitle {
-        font-size: 22px;
-    }
-    .tutor-specs td {
-        padding: 12px 16px;
-        font-size: 14px;
-    }
-    .tutor-page-btn {
-        max-width: 100%;
-    }
-}
+.satan-card:hover {
+    transform: translateY(-6px);
+   
