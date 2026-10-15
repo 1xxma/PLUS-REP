@@ -872,3 +872,309 @@ header {
         font-size: 14px;
     }
 }
+/* =========================================
+   СТРАНИЦА РЕПЕТИТОРОВ (SUBJECTS)
+   ========================================= */
+.subjects-page {
+    flex-grow: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.page-title {
+    font-family: 'Benzin', 'Buyan', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--text);
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.page-subtitle {
+    font-family: 'Buyan', sans-serif;
+    font-size: 18px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.tutors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tutor-card-link {
+    display: block;
+    background: rgba(0, 0, 0, 0.25);
+    border: 2px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.tutor-card-link:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 45px rgba(255, 209, 102, 0.25);
+}
+
+.tutor-card-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.tutor-card-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.tutor-card-link:hover .tutor-card-photo img {
+    transform: scale(1.06);
+}
+
+.tutor-card-body {
+    padding: 22px 24px 26px;
+    text-align: center;
+}
+
+.tutor-card-name {
+    font-family: 'Benzin', 'Buyan', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+.tutor-card-subject {
+    font-family: 'Buyan', sans-serif;
+    font-size: 16px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.tutor-card-price {
+    font-family: 'Benzin', 'Buyan', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   СТРАНИЦА РЕПЕТИТОРА (TUTOR) — стиль Авито
+   ========================================= */
+.tutor-breadcrumb {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px 0;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.tutor-breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Buyan', sans-serif;
+    font-size: 16px;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.tutor-breadcrumb a:hover {
+    color: var(--accent);
+}
+
+.tutor-page {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 40px 80px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    align-items: flex-start;
+}
+
+.tutor-page-photo {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--border);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 110px;
+}
+
+.tutor-page-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.tutor-page-info {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tutor-page-name {
+    font-family: 'Benzin', 'Buyan', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--text);
+    line-height: 1.1;
+    text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.tutor-page-price {
+    font-family: 'Benzin', 'Buyan', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.tutor-page-desc {
+    font-family: 'Buyan', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.tutor-page-subtitle {
+    font-family: 'Benzin', 'Buyan', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 15px;
+    letter-spacing: -0.3px;
+}
+
+.tutor-specs {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+.tutor-specs tr {
+    border-bottom: 1px solid var(--border);
+}
+
+.tutor-specs tr:last-child {
+    border-bottom: none;
+}
+
+.tutor-specs td {
+    padding: 16px 22px;
+    font-family: 'Buyan', sans-serif;
+    font-size: 16px;
+    vertical-align: top;
+}
+
+.spec-label {
+    color: var(--text-muted);
+    width: 40%;
+    font-weight: 400;
+}
+
+.spec-value {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.tutor-page-btn {
+    margin-top: 15px;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    align-self: flex-start;
+}
+
+/* =========================================
+   АДАПТИВ
+   ========================================= */
+@media (max-width: 992px) {
+    .tutors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .tutor-page {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .tutor-page-photo {
+        position: static;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .subjects-page {
+        padding: 40px 20px;
+    }
+    .page-title {
+        font-size: 34px;
+    }
+    .page-subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+    .tutors-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+    .tutor-card-name {
+        font-size: 20px;
+    }
+
+    .tutor-page {
+        padding: 25px 20px 50px;
+    }
+    .tutor-page-name {
+        font-size: 32px;
+    }
+    .tutor-page-price {
+        font-size: 24px;
+    }
+    .tutor-page-desc {
+        font-size: 15px;
+        padding: 15px 0;
+    }
+    .tutor-page-subtitle {
+        font-size: 22px;
+    }
+    .tutor-specs td {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    .tutor-page-btn {
+        max-width: 100%;
+    }
+}
