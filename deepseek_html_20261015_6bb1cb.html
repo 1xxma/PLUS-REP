@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLUS REP — Асмодея Кузнецова</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="header-nav">
+            <a href="subjects.html" class="active">РЕПЕТИТОРЫ</a>
+            <a href="reviews.html">ОТЗЫВЫ</a>
+            <a href="about.html">О НАС</a>
+        </nav>
+
+        <div class="header-actions">
+            <a href="login.html" class="btn btn-outline">ВОЙТИ</a>
+            <a href="schedule.html" class="btn btn-accent">ЗАПИСЬ</a>
+        </div>
+    </header>
+
+    <div class="tutor-breadcrumb">
+        <a href="subjects.html">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Все репетиторы
+        </a>
+    </div>
+
+    <main class="tutor-page">
+
+        <!-- ЛЕВАЯ КОЛОНКА: ФОТО -->
+        <div class="tutor-page-photo">
+            <img src="images/asmodeya.jpg" alt="Асмодея Кузнецова">
+        </div>
+
+        <!-- ПРАВАЯ КОЛОНКА: ИНФО -->
+        <div class="tutor-page-info">
+
+            <h1 class="tutor-page-name">Асмодея Кузнецова</h1>
+
+            <div class="tutor-page-price">от 600 ₽ / час</div>
+
+            <p class="tutor-page-desc">
+                Мастер математики. Считает грехи быстрее, чем ты — производные. Готовит к ОГЭ, ЕГЭ и Страшному суду. Объясняет так, что даже интегралы начинают бояться.
+            </p>
+
+            <h2 class="tutor-page-subtitle">Характеристики</h2>
+
+            <table class="tutor-specs">
+                <tr>
+                    <td class="spec-label">Предмет</td>
+                    <td class="spec-value">Математика</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">Классы</td>
+                    <td class="spec-value">1–11</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">Опыт работы</td>
+                    <td class="spec-value">666 лет</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">Образование</td>
+                    <td class="spec-value">Академия 9-го круга, магистр грехов</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">Формат занятий</td>
+                    <td class="spec-value">Онлайн и оффлайн (в аду)</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">Длительность</td>
+                    <td class="spec-value">45 минут</td>
+                </tr>
+                <tr>
+                    <td class="spec-label">Дополнительно</td>
+                    <td class="spec-value">Душа в комплект не входит</td>
+                </tr>
+            </table>
+
+            <a href="schedule.html" class="btn btn-accent btn-lg tutor-page-btn">
+                Записаться
+            </a>
+
+        </div>
+    </main>
+
+    <script src="auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const user = getCurrentUser();
+            if (!user) return;
+
+            document.querySelectorAll('header a').forEach(link => {
+                const text = link.textContent.trim();
+                if (text === 'ВОЙТИ' || link.getAttribute('href') === 'login.html') {
+                    link.textContent = user.name;
+                    link.setAttribute('href', '#');
+                    link.classList.add('user-name-link');
+                    link.title = 'Нажмите, чтобы выйти';
+                    link.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        if (confirm('Выйти из аккаунта?')) logout();
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
